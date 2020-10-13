@@ -1,6 +1,6 @@
 .nav-title {
-    font-size: 24px;
-    font-weight: 700;
+  height: 75px;
+  width: 75px;
     display: inline-block;
     color: #f2f2f2;
     padding-left: 10px;
@@ -8,14 +8,14 @@
 
 .nav {
   margin: 0 0 30px;
-  background-color: #00acb0;
+  background-color: #3F805A;
   overflow: hidden;
 }
 
 .nav-link {
   float: left;
   color: #f2f2f2;
-  background-color: #00acb0;
+  background-color: #3F805A;
   text-align: center;
   padding: 24px 10px;
   text-decoration: none;
