@@ -10,6 +10,7 @@ class LoginPage extends Component {
         <LoginForm />
 
         <center>
+          <span>New to MN-GO?  </span>
           <button
             type="button"
             className="btn btn_asLink"
