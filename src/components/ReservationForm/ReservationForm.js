@@ -1,32 +1,53 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-
+import './ReservationForm.css';
 // Basic class component structure for React with default state
 // value setup. When making a new component be sure to replace
 // the component name TemplateClass with the name for the new
 // component.
 class ReservationForm extends Component {
 state = {
+    userId: '',
     firstName: '',
     lastName: '',
+    email: '',
     streetAddress: '',
     city: '',
     zipCode: '',
-
-
-
+    campSite: 'selected',
+    stateParkId: '',
+    startDate: '',
+    endDate: ''
 }
-
+handleChange = (event, propertyName) => {
+    this.setState({
+        ...this.state,
+        [propertyName]: event.target.value,
+        stateParkId: this.props.store.park.id,
+        userId: this.props.store.user.id
+    })
+}
+onSubmit = () => {
+    console.log('in on submit', this.state)
+    this.props.dispatch({
+        type: 'CREATE_TRIP',
+        payload: this.state
+    })
+    console.log(this.state);
+}
   render() {
     return (
-      <div>
+      <div className="centeredDiv">
         <h2>Made it into ReservationForm</h2>
-        <form>
             <label>First Name: </label>
-            <input value={this.state.firstName} onChange={(event) => this.handleChange(event, 'firstName')}/>
+            <input className="reservationFormInput"
+            value={this.state.firstName} 
+            onChange={(event) => this.handleChange(event, 'firstName')}/>
             <label>Last Name: </label>
             <input value={this.state.lastName} onChange={(event) => this.handleChange(event, 'lastName')}/>
+            <label>Email: </label>
+            <input value={this.state.email} onChange={(event) => this.handleChange(event, 'email')}/>
             <label>Street Address: </label>
             <input value={this.state.streetAddress} onChange={(event) => this.handleChange(event, 'streetAddress')}/>
             <label>City: </label>
@@ -34,21 +55,36 @@ state = {
             <label>Zip Code: </label>
             <input value={this.state.zipCode} onChange={(event) => this.handleChange(event, 'zipCode')}/>
             <label>Select a Campsite: </label>
-            <select>
-                <option>A</option>
+            <select value={this.state.campSite} onChange={(event) => this.handleChange(event, 'campSite')}>
+            <option disabled value="selected"> -- select a site -- </option>
+                <option >A</option>
                 <option>B</option>
-                <option>A</option>
-                <option>A</option>
-                <option>A</option>
-                <option>A</option>
-                <option>A</option>
-                <option>A</option>
-                <option>A</option>
-                <option>A</option>
-                
-
+                <option>C</option>
+                <option>D</option>
+                <option>E</option>
+                <option>F</option>
+                <option>G</option>
+                <option>H</option>
+                <option>I</option>
+                <option>J</option>
+                <option>K</option>
+                <option>L</option>
+                <option>M</option>
+                <option>N</option>
+                <option>O</option>
+                <option>P</option>
             </select>
-        </form>
+            <label>Start date:</label>
+            <input type="date" id="start" name="trip-start"
+                value={this.state.startDate}
+                onChange={(event) => this.handleChange(event, 'startDate')}
+                 min="2020-10-01" max="2026-12-31" />
+                 <label>End date:</label>
+            <input type="date" id="end" name="trip-end"
+                value={this.state.endDate} 
+                onChange={(event) => this.handleChange(event, 'endDate')}
+                min="2020-10-01" max="2026-12-31"/>
+            <button className="btn" onClick={this.onSubmit}>Book</button>
       </div>
     );
   }

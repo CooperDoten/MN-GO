@@ -23,8 +23,6 @@ const Nav = (props) => {
         <div className="dropdown">
           <MenuIcon id="dropDownBtn" className="dropBtn" style={{ color: "white" }} />
           <div className="dropdown-content">
-          <Link className="nav-link"  to="/user">Home</Link>
-        
             {/* Show the link to the info page and the logout button if the user is logged in */}
             {props.store.user.id && (
               <>

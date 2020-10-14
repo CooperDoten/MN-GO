@@ -98,7 +98,7 @@ class App extends Component {
             />
              <ProtectedRoute
               // with authRedirect:
-              // - if logged in, redirects to "/ParkDetails"
+              // - if logged in, redirects to "/ReservationForm"
               // - else shows LoginPage at /login
               exact
               path='/ReservationForm'
