@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-
+import MenuIcon from '@material-ui/icons/Menu';
 const Nav = (props) => {
   let loginLinkData = {
     path: '/login',
@@ -21,7 +21,7 @@ const Nav = (props) => {
         <img className="nav-title" src="/images/MN_GO_Logo.png"/>
       <div className="nav-right">
         <div className="dropdown">
-          <img id="dropDownBtn" className="dropBtn" src="/images/PngItem_6342297.png"/>
+          <MenuIcon id="dropDownBtn" className="dropBtn" style={{ color: "white" }} />
           <div className="dropdown-content">
           <Link className="nav-link"  to="/user">Home</Link>
         

@@ -11,7 +11,8 @@ console.log('our req.body is', req.body.id)
   const queryText = `SELECT * FROM "state_park" where id = $1`;
   pool.query(queryText, [req.body.id])
       .then( (result) => {
-        res.send(result.rows);
+        console.log(result.rows[0]);
+        res.send(result.rows[0]);
       })
       .catch((error) => {
           console.log('we have an error ', error);

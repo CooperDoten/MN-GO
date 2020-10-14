@@ -80,9 +80,8 @@ class App extends Component {
               // - if logged in, redirects to "/ParkDetails"
               // - else shows LoginPage at /login
               exact
-              path="/login"
+              path='/ParkDetails'
               component={ParkDetails}
-              authRedirect="/ParkDetails"
             />
             <ProtectedRoute
               // with authRedirect:

@@ -6,7 +6,7 @@ function* fetchPark(action) {
     console.log(`in our fetchParks saga`);
   try {
     let response = yield axios.post( '/api/park', action.payload);
-    console.log(response);
+    console.log(response.data);
     yield put({ type: 'SET_PARK', payload: response.data});
 } catch (error) {
     console.log('Park GET request failed', error);
