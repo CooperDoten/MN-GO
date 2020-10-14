@@ -26,7 +26,7 @@ class StateParksList extends Component {
   render() {
     return (
       <Link to="/ParkDetails">
-        <div className="park-photoDiv"
+        <div className="centeredDiv"
           onClick={() => this.parkDetails(this.props.park)}>
           <img className="park-photo" src={this.props.park.photo} alt="Minnesota State Park"/>
         </div>

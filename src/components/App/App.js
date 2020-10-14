@@ -20,7 +20,20 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import ParkDetails from '../ParkDetails/ParkDetails';
+import ReservationForm from '../ReservationForm/ReservationForm';
 import './App.css';
+import { createMuiTheme} from '@material-ui/core';
+//set some primary and secondary color themes
+const theme = createMuiTheme({
+    palette: {
+      primary: {
+        main: '#3F805A'
+      },
+      secondary: {
+          main: '#ffffff'
+      }
+    }
+});
 
 
 class App extends Component {
@@ -82,6 +95,14 @@ class App extends Component {
               exact
               path='/ParkDetails'
               component={ParkDetails}
+            />
+             <ProtectedRoute
+              // with authRedirect:
+              // - if logged in, redirects to "/ParkDetails"
+              // - else shows LoginPage at /login
+              exact
+              path='/ReservationForm'
+              component={ReservationForm}
             />
             <ProtectedRoute
               // with authRedirect:

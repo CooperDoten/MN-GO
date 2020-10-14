@@ -1,0 +1,27 @@
+.centeredDiv{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.max-width70{
+    max-width: 70%; 
+}
+.padding20{
+    padding: 20px;
+}
+img{
+    border-radius: 5px;
+}
+.StandardButton{
+    height: 40px;
+    width: 60px;
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 30px;
+}
+.StandardButton:hover{
+    font-size: 200%;
+    transition: .3s ease;
+}
