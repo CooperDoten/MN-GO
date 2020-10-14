@@ -18,7 +18,8 @@ class UserPage extends Component {
         <p>Your ID is: {this.props.store.user.id}</p>
         <LogOutButton className="log-in" />
         <div>
-          
+          {this.props.store.parks.map(park => 
+            <img key={park.id} src={park.photo}/>)}
         </div>
       </div>
     );
