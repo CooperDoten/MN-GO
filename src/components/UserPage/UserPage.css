@@ -1,0 +1,8 @@
+.displayGallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 100%;
+    width: 90%;
+    overflow: auto;
+}

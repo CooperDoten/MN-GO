@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-
+import StateParksList from '../StateParksList/StateParksList';
+import './UserPage.css';
 class UserPage extends Component {
   componentDidMount() {
     console.log(`in component did mount`)
@@ -17,9 +18,9 @@ class UserPage extends Component {
         <h1 id="welcome">Welcome, {this.props.store.user.username}!</h1>
         <p>Your ID is: {this.props.store.user.id}</p>
         <LogOutButton className="log-in" />
-        <div>
+        <div className="displayGallery">
           {this.props.store.parks.map(park => 
-            <img key={park.id} src={park.photo}/>)}
+            <StateParksList key={park.id} park={park}/>)}
         </div>
       </div>
     );

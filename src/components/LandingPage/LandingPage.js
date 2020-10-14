@@ -24,15 +24,10 @@ class LandingPage extends Component {
         <div className="grid">
           <div className="grid-col grid-col_8">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-              id felis metus. Vestibulum et pulvinar tortor. Morbi pharetra
-              lacus ut ex molestie blandit. Etiam et turpis sit amet risus
-              mollis interdum. Suspendisse et justo vitae metus bibendum
-              fringilla sed sed justo. Aliquam sollicitudin dapibus lectus,
-              vitae consequat odio elementum eget. Praesent efficitur eros vitae
-              nunc interdum, eu interdum justo facilisis. Sed pulvinar nulla ac
-              dignissim efficitur. Quisque eget eros metus. Vestibulum bibendum
-              fringilla nibh a luctus. Duis a sapien metus.
+              Minnesota has lots to offer! From 10,000 lakes to the rolling bluffs. From
+              the sight of the first snow, to a long summer's day spent at that lake,
+              there's something for everyone. Come and stay for a while and see why Minnesota
+              is America's best kept secret.
             </p>
 
             <p>
