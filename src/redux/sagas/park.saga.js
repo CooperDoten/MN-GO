@@ -13,6 +13,7 @@ function* fetchParks() {
   }
 }
 
+
 function* parksSaga() {
   yield takeLatest('FETCH_PARKS', fetchParks);
 }

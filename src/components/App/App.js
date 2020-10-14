@@ -19,8 +19,9 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
-
+import ParkDetails from '../ParkDetails/ParkDetails';
 import './App.css';
+
 
 class App extends Component {
   componentDidMount() {
@@ -73,6 +74,15 @@ class App extends Component {
               path="/login"
               component={LoginPage}
               authRedirect="/user"
+            />
+            <ProtectedRoute
+              // with authRedirect:
+              // - if logged in, redirects to "/ParkDetails"
+              // - else shows LoginPage at /login
+              exact
+              path="/login"
+              component={ParkDetails}
+              authRedirect="/ParkDetails"
             />
             <ProtectedRoute
               // with authRedirect:
