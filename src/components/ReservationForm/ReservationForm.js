@@ -14,18 +14,21 @@ state = {
     email: '',
     streetAddress: '',
     city: '',
+    state: '',
     zipCode: '',
     campSite: 'selected',
     stateParkId: '',
     startDate: '',
-    endDate: ''
+    endDate: '',
+    photo: '',
 }
 handleChange = (event, propertyName) => {
     this.setState({
         ...this.state,
         [propertyName]: event.target.value,
         stateParkId: this.props.store.park.id,
-        userId: this.props.store.user.id
+        userId: this.props.store.user.id,
+        photo: this.props.store.park.photo
     })
 }
 onSubmit = () => {
@@ -37,6 +40,18 @@ onSubmit = () => {
     console.log(this.state);
 }
   render() {
+    const staticState = [
+        'AL', 'AK', 'AZ', 'AR', 'CA', 
+        'CO', 'CT', 'DE', 'FL', 'GA',
+        'HI', 'ID', 'IL', 'IN', 'IA',
+        'KS', 'KY', 'LA', 'ME', 'MD',
+        'MA', 'MI', 'MN', 'MS', 'MO',
+        'MT', 'NE', 'NV', 'NH', 'NJ',
+        'NM', 'NY', 'NC', 'ND', 'OH',
+        'OK', 'OR', 'PA', 'RI', 'SC',
+        'SD', 'TN', 'TX', 'UT', 'VT',
+        'VA', 'WA', 'WV', 'WI', 'WY',
+    ];    
     return (
       <div className="centeredDiv">
         <h2>Made it into ReservationForm</h2>
@@ -52,6 +67,13 @@ onSubmit = () => {
             <input value={this.state.streetAddress} onChange={(event) => this.handleChange(event, 'streetAddress')}/>
             <label>City: </label>
             <input value={this.state.city} onChange={(event) => this.handleChange(event, 'city')}/>
+            <label>State: </label>
+            <select value={this.state.state} onChange={(event) => this.handleChange(event, 'state')}>
+            <option disabled value="selected"> -- select a state -- </option>
+                {staticState.map((state, i) => {
+                   return <option key={i} value={state}>{state}</option>
+                })}
+            </select>
             <label>Zip Code: </label>
             <input value={this.state.zipCode} onChange={(event) => this.handleChange(event, 'zipCode')}/>
             <label>Select a Campsite: </label>
