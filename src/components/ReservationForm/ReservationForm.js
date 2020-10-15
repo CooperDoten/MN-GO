@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import './ReservationForm.css';
 // Basic class component structure for React with default state
@@ -53,29 +54,55 @@ onSubmit = () => {
         'VA', 'WA', 'WV', 'WI', 'WY',
     ];    
     return (
-      <div className="centeredDiv">
-        <h2>Made it into ReservationForm</h2>
+      <div className="formDiv">
+          <div className="reservationFormDiv">
             <label>First Name: </label>
             <input className="reservationFormInput"
-            value={this.state.firstName} 
-            onChange={(event) => this.handleChange(event, 'firstName')}/>
+                value={this.state.firstName} 
+                onChange={(event) => this.handleChange(event, 'firstName')}/>
+                </div>
+                <div className="reservationFormDiv">
             <label>Last Name: </label>
-            <input value={this.state.lastName} onChange={(event) => this.handleChange(event, 'lastName')}/>
+            <input className="reservationFormInput"
+                value={this.state.lastName} 
+                onChange={(event) => this.handleChange(event, 'lastName')}/>
+                </div>
+                <div className="reservationFormDiv">
             <label>Email: </label>
-            <input value={this.state.email} onChange={(event) => this.handleChange(event, 'email')}/>
+            <input className="reservationFormInput"
+                value={this.state.email} 
+                onChange={(event) => this.handleChange(event, 'email')}/>
+                </div>
+                <div className="reservationFormDiv">
             <label>Street Address: </label>
-            <input value={this.state.streetAddress} onChange={(event) => this.handleChange(event, 'streetAddress')}/>
+            <input className="reservationFormInput"
+                value={this.state.streetAddress} 
+                onChange={(event) => this.handleChange(event, 'streetAddress')}/>
+                </div>
+                  <div className="reservationFormDiv">
             <label>City: </label>
-            <input value={this.state.city} onChange={(event) => this.handleChange(event, 'city')}/>
+            <input className="reservationFormInput"
+                value={this.state.city} 
+                onChange={(event) => this.handleChange(event, 'city')}/>
+                </div>
+                <div className="reservationFormDiv">
             <label>State: </label>
-            <select value={this.state.state} onChange={(event) => this.handleChange(event, 'state')}>
+            <select 
+            value={this.state.state} 
+            onChange={(event) => this.handleChange(event, 'state')}>
             <option disabled value="selected"> -- select a state -- </option>
                 {staticState.map((state, i) => {
                    return <option key={i} value={state}>{state}</option>
                 })}
             </select>
+            </div>
+            <div className="reservationFormDiv">
             <label>Zip Code: </label>
-            <input value={this.state.zipCode} onChange={(event) => this.handleChange(event, 'zipCode')}/>
+            <input className="reservationFormInput"
+                value={this.state.zipCode} 
+                onChange={(event) => this.handleChange(event, 'zipCode')}/>
+                </div>
+                <div className="reservationFormDiv">
             <label>Select a Campsite: </label>
             <select value={this.state.campSite} onChange={(event) => this.handleChange(event, 'campSite')}>
             <option disabled value="selected"> -- select a site -- </option>
@@ -96,17 +123,27 @@ onSubmit = () => {
                 <option>O</option>
                 <option>P</option>
             </select>
+            </div>
+            <div className="reservationFormDiv">
             <label>Start date:</label>
             <input type="date" id="start" name="trip-start"
                 value={this.state.startDate}
                 onChange={(event) => this.handleChange(event, 'startDate')}
                  min="2020-10-01" max="2026-12-31" />
+                </div>
+                <div className="reservationFormDiv">
                  <label>End date:</label>
             <input type="date" id="end" name="trip-end"
                 value={this.state.endDate} 
                 onChange={(event) => this.handleChange(event, 'endDate')}
                 min="2020-10-01" max="2026-12-31"/>
-            <button className="btn" onClick={this.onSubmit}>Book</button>
+            </div>
+            <div className="reservationFormDiv">
+            <button className="descriptionBtn" onClick={this.onSubmit}>Book</button>
+            </div>
+            <div className="reservationFormDiv">
+            <button className="descriptionBtn"><Link className="descriptionLink" to="/user">Cancel</Link></button>
+            </div>
       </div>
     );
   }

@@ -11,7 +11,8 @@
   overflow: hidden;
 }
 .nav-right{
-  padding-right: 30px;
+  margin-top: 10px;
+  padding-right: 10px;
 }
 .nav-link {
   float: left;

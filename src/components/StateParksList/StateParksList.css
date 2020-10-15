@@ -4,3 +4,11 @@
     width: 300px;
     margin: 10px;
 }
+@media only screen and (max-width: 550px){
+    .park-photo{
+        height: 100px;
+        width: 150px;
+        margin: 5px;
+        
+    }
+}
