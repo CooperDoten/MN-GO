@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {Link} from 'react-router-dom';
 import mapStoreToProps from '../../redux/mapStoreToProps';
+import ImagesCarosel from '../ImagesCarosel/ImagesCarosel';
 import './ParkDetails.css';
 
 
@@ -12,7 +13,9 @@ class ParkDetails extends Component {
     return (
         <div className="centeredDiv">
             <h1 className="padding20">{this.props.store.park.name}</h1>
-            <img className="max-width70" src={this.props.store.park.photo} />
+            {this.props.store.images.map((image, i) => 
+              <ImagesCarosel image= {image}/>
+              )}
             <p className="max-width70">{this.props.store.park.description}</p>
             <div className="widthDiv">
                 <button className="descriptionBtn"

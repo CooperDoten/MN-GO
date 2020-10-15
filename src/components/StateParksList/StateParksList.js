@@ -21,16 +21,20 @@ class StateParksList extends Component {
           type: 'FETCH_PARK',
           payload: park
       });
+      this.props.dispatch({
+        type: 'FETCH_IMAGES',
+        payload: park
+      })
+      
   }
 
   render() {
     return (
-      <Link to="/ParkDetails">
-        <div className="centeredDiv"
-          onClick={() => this.parkDetails(this.props.park)}>
+      
+        <div className="parkCenteredDiv">
           <img className="park-photo" src={this.props.park.photo} alt="Minnesota State Park"/>
+          <button className="userBtn" onClick={() => this.parkDetails(this.props.park)}><Link className="descriptionLink" to="/ParkDetails">Explore</Link></button>
         </div>
-      </Link>
     );
   }
 }

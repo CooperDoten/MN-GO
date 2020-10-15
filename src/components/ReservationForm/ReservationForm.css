@@ -1,3 +1,8 @@
 .reservationFormDiv{
    padding: 10px;
 }
+.formDiv{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}

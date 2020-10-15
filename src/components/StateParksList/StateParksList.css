@@ -1,13 +1,13 @@
 
 .park-photo{
-    height: 200px;
-    width: 300px;
-    margin: 10px;
+    height: 150px;
+    width: 100%;
+    margin-bottom: 9px;
 }
 @media only screen and (max-width: 550px){
     .park-photo{
-        height: 100px;
-        width: 150px;
+        height: 70px;
+        width: 130px;
         margin: 5px;
         
     }

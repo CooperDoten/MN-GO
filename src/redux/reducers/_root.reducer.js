@@ -4,6 +4,7 @@ import user from './user.reducer';
 import parks from './parks.reducer';
 import park from './park.reducer';
 import trip from './trip.reducer';
+import images from './images.reducer'
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
 // This is imported in index.js as rootSaga
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
   parks, //contains all parks
   park,
   trip,
+  images,
 });
 
 export default rootReducer;
