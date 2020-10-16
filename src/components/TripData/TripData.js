@@ -49,9 +49,9 @@ class TemplateClass extends Component {
         <img src={this.props.trip.photo}/>
         <p >Campsite: {this.props.trip.camp_site}</p>
         <TextField label="Comments" variant="outlined" 
-        value={this.state.comment} onChange={this.handleChange}/>
+            value={this.state.comment} onChange={this.handleChange}/>
         <button className="descriptionBtn"
-        onClick={this.onAddComment}>Add Comment</button>
+            onClick={this.onAddComment}>Add Comment</button>
         <p>{this.props.trip.comments}</p>
         <DeleteIcon  onClick={this.deleteTrip}/>
       </div>

@@ -2,15 +2,14 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
-/**
- * GET route template
- */
 router.post('/', (req, res) => {
+    //joining our many state park photos to our banner photo
    console.log(`in our images router.post`, req.body.id);
-  let queryText = `	SELECT "state_park_images"."photo" FROM "state_park_images"
-  JOIN "state_park"
-   ON "state_park"."id" = "state_park_images"."state_park_id"
-  WHERE "state_park"."id" = $1;`;
+  let queryText = 
+  `SELECT "state_park_images"."photo" FROM "state_park_images"
+    JOIN "state_park"
+    ON "state_park"."id" = "state_park_images"."state_park_id"
+    WHERE "state_park"."id" = $1;`;
   pool.query(queryText, [req.body.id])
   .then(result => {
       console.log(result.rows);

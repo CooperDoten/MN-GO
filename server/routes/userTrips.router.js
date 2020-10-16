@@ -2,12 +2,10 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
-/**
- * GET route template
- */
 router.get('/', (req, res) => {
-  console.log(`in our user trips POST`, req.user.id);
-  let queryText = `SELECT * FROM "user_trip" WHERE "user_id" = $1 ORDER BY "id" ASC;`;
+    //get all of a users trips based on id
+  console.log(`in our user trips GET`, req.user.id);
+  let queryText = `SELECT * FROM "user_trip" WHERE "user_id" = $1 ORDER BY "id" DESC;`;
   pool.query(queryText, [req.user.id])
   .then(result => {
       console.log(`our result is this`, result.rows)

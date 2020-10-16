@@ -7,7 +7,7 @@ function* changeComment(action) {
     let id = action.payload.tripId
   try {
     yield axios.put(`/api/comment/${id}`, action.payload);
-    yield put({type: 'SET_TRIPS'});
+    yield put({type: 'FETCH_USER_TRIPS'});
   } catch (error) {
     console.log('Parks GET request failed', error);
   }

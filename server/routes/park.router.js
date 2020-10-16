@@ -5,7 +5,7 @@ const {
     rejectUnauthenticated,
   } = require('../modules/authentication-middleware');
 //route set up to take data sent and 
-//perform a query to the DB to return a specific movie
+//perform a query to the DB to return a specific park
 router.post('/', rejectUnauthenticated, (req, res) => {
 console.log('our req.body is', req.body.id)
   const queryText = `SELECT * FROM "state_park" where id = $1`;
