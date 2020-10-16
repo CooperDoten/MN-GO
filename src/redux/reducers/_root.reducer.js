@@ -3,7 +3,6 @@ import errors from './errors.reducer';
 import user from './user.reducer';
 import parks from './parks.reducer';
 import park from './park.reducer';
-import trip from './trip.reducer';
 import images from './images.reducer';
 import userTrips from './userTrips.reducer';
 // rootReducer is the primary reducer for our entire project
@@ -17,7 +16,6 @@ const rootReducer = combineReducers({
   user, // will have an id and username if someone is logged in
   parks, //contains all parks
   park,
-  trip,
   images,
   userTrips,
 });

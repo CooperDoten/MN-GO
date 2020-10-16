@@ -15,6 +15,8 @@ const detailRouter = require('./routes/park.router');
 const tripRouter = require('./routes/trip.router');
 const imageRouter = require('./routes/images.router');
 const userTripsRouter = require('./routes/userTrips.router');
+const commentRouter = require('./routes/comment.router.js');
+const deleterRouter = require('./routes/deleter.router');
 // Body parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -33,6 +35,8 @@ app.use('/api/park', detailRouter);
 app.use('/api/trip', tripRouter);
 app.use('/api/images', imageRouter);
 app.use('/api/userTrips', userTripsRouter);
+app.use('/api/comment', commentRouter);
+app.use('/api/delete/', deleterRouter);
 // Serve static files
 app.use(express.static('build'));
 

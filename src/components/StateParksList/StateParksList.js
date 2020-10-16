@@ -32,6 +32,7 @@ class StateParksList extends Component {
     return (
       
         <div className="parkCenteredDiv">
+          <h3>{this.props.park.name}</h3>
           <img className="park-photo" src={this.props.park.photo} alt="Minnesota State Park"/>
           <button className="userBtn" onClick={() => this.parkDetails(this.props.park)}><Link className="descriptionLink" to="/ParkDetails">Explore</Link></button>
         </div>

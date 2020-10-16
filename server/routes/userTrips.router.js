@@ -5,10 +5,10 @@ const router = express.Router();
 /**
  * GET route template
  */
-router.post('/', (req, res) => {
-  console.log(`in our user trips POST`, req.body);
-  let queryText = `SELECT * FROM "user_trip" WHERE "user_id" = $1;`;
-  pool.query(queryText, [req.body.userId])
+router.get('/', (req, res) => {
+  console.log(`in our user trips POST`, req.user.id);
+  let queryText = `SELECT * FROM "user_trip" WHERE "user_id" = $1 ORDER BY "id" ASC;`;
+  pool.query(queryText, [req.user.id])
   .then(result => {
       console.log(`our result is this`, result.rows)
       res.send(result.rows);
