@@ -141,7 +141,7 @@ onSubmit = () => {
                 min="2020-10-01" max="2026-12-31"/>
             </div>
             <div className="reservationFormDiv">
-            <button className="descriptionBtn" onClick={this.onSubmit}>Book</button>
+            <button className="descriptionBtn" onClick={this.onSubmit}><Link className="descriptionLink" to="/MyTrips">Book</Link></button>
             </div>
             <div className="reservationFormDiv">
             <button className="descriptionBtn"><Link className="descriptionLink" to="/user">Cancel</Link></button>
