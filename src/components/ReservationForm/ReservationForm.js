@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import './ReservationForm.css';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 // Basic class component structure for React with default state
 // value setup. When making a new component be sure to replace
 // the component name TemplateClass with the name for the new
@@ -119,8 +121,19 @@ onSubmit = () => {
                     value={this.state.endDate} 
                     onChange={(event) => this.handleChange(event, 'endDate')}
                     min="2020-10-01" max="2026-12-31"/>
-            <button className="descriptionBtn" onClick={this.onSubmit}><Link className="descriptionLink" to="/MyTrips">Book</Link></button>
-            <button className="descriptionBtn"><Link className="descriptionLink" to="/user">Cancel</Link></button>
+                <button className="descriptionBtn"><Link className="descriptionLink" to="/user">Cancel</Link></button>
+                <div className="btnDiv">
+                <Link to="/user" className="btn btn-2">
+                  <span className="round"><i><ChevronLeftIcon/></i></span>
+                  <span className="txt-left">BACK</span>
+                  </Link>
+                </div>
+              <div className="btnDiv" onClick={this.onSubmit}>
+                <Link to="/MyTrips" className="btn btn-2">
+                  <span className="txt-left">BOOK</span>
+                  <span className="round-right"><i><ChevronRightIcon/></i></span>
+                  </Link>
+                </div>
       </div>
     );
   }

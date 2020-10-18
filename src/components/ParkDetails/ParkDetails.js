@@ -26,7 +26,7 @@ class ParkDetails extends Component {
               <div className="btnDiv">
                 <Link to="/user" className="btn btn-2">
                   <span className="round"><i><ChevronLeftIcon/></i></span>
-                  <span className="txt-left">Back</span>
+                  <span className="txt-left">BACK</span>
                   </Link>
                 </div>
                 <div className="btnDiv">

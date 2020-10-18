@@ -39,7 +39,7 @@ class StateParksList extends Component {
           {/* <button className="userBtn" ><Link className="descriptionLink" to="/ParkDetails">Explore</Link></button> */}
           <div className="btnDiv" onClick={() => this.parkDetails(this.props.park)}>
                 <Link to="/ParkDetails" className="btn btn-2"> 
-                  <span className="txt-left">GO!</span>
+                  <span className="txt-left">GO</span>
                   <span className="round-right"><i><ChevronRightIcon/></i></span>
                   </Link>
                 </div>

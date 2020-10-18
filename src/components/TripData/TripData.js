@@ -12,6 +12,11 @@ class TemplateClass extends Component {
   state = {
     comment: '',
   };
+  componentDidMount() {
+    this.props.dispatch({
+        type: 'FETCH_USER_TRIPS'
+    })
+}
   handleChange = (event) => {
     this.setState({
         ...this.state,
@@ -31,6 +36,10 @@ class TemplateClass extends Component {
       this.props.dispatch({
         type: 'FETCH_USER_TRIPS'
     })
+    this.setState({
+      ...this.state,
+      comment: ''
+  })
   }
   deleteTrip = () => {
       let objectToDelete = {
