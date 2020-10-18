@@ -1,6 +1,7 @@
 .individualStateParkImage{
-    height: 300px;
-    width: 80%;
+    height: auto;
+    width: 600px;
     text-align:center;
+    max-width: 100%;
    
 }
