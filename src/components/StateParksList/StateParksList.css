@@ -1,8 +1,8 @@
 
 .park-photo{
-    height: 150px;
+    height: 75%;
     width: 100%;
-    margin-bottom: 9px;
+    margin-bottom: 7px;
 }
 @media only screen and (max-width: 550px){
     .park-photo{

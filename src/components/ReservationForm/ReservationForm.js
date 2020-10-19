@@ -58,26 +58,37 @@ onSubmit = () => {
     return (
       <div className="formDiv">
           <h1>Make a Reservation</h1>
+          <div className="reservationFormDiv">
             <label>First Name: </label>
                 <input className="reservationFormInput"
                     value={this.state.firstName} 
                     onChange={(event) => this.handleChange(event, 'firstName')}/>
+            </div>
+            <div className="reservationFormDiv">
             <label>Last Name: </label>
                 <input className="reservationFormInput"
                     value={this.state.lastName} 
                     onChange={(event) => this.handleChange(event, 'lastName')}/>
+            </div>
+            <div className="reservationFormDiv">
             <label>Email: </label>
                 <input className="reservationFormInput"
                     value={this.state.email} 
                     onChange={(event) => this.handleChange(event, 'email')}/>
+            </div>
+            <div className="reservationFormDiv">
             <label>Street Address: </label>
                 <input className="reservationFormInput"
                     value={this.state.streetAddress} 
                     onChange={(event) => this.handleChange(event, 'streetAddress')}/>
+            </div>
+            <div className="reservationFormDiv">
             <label>City: </label>
                 <input className="reservationFormInput"
                     value={this.state.city} 
                     onChange={(event) => this.handleChange(event, 'city')}/>
+            </div>
+            <div className="reservationFormDiv">
             <label>State: </label>
                 <select 
                     value={this.state.state} 
@@ -87,10 +98,14 @@ onSubmit = () => {
                         return <option key={i} value={state}>{state}</option>
                         })}
                 </select>
+            </div>
+            <div className="reservationFormDiv">
             <label>Zip Code: </label>
                 <input className="reservationFormInput"
                     value={this.state.zipCode} 
                     onChange={(event) => this.handleChange(event, 'zipCode')}/>
+            </div>
+            <div className="reservationFormDiv">
             <label>Select a Campsite: </label>
                 <select value={this.state.campSite} onChange={(event) => this.handleChange(event, 'campSite')}>
                     <option disabled value="selected"> -- select a site -- </option>
@@ -111,17 +126,21 @@ onSubmit = () => {
                     <option>O</option>
                     <option>P</option>
                 </select>
+            </div>
+            <div className="reservationFormDiv">
             <label>Start date:</label>
-                <input type="date" id="start" name="trip-start"
+                <input type="date" id="start" name="trip-start" className="datePicker"
                     value={this.state.startDate}
                     onChange={(event) => this.handleChange(event, 'startDate')}
                     min="2020-10-01" max="2026-12-31" />
+            </div>
+            <div className="reservationFormDiv">
             <label>End date:</label>
-                <input type="date" id="end" name="trip-end"
+                <input type="date" id="end" name="trip-end" className="datePicker"
                     value={this.state.endDate} 
                     onChange={(event) => this.handleChange(event, 'endDate')}
                     min="2020-10-01" max="2026-12-31"/>
-                <button className="descriptionBtn"><Link className="descriptionLink" to="/user">Cancel</Link></button>
+                </div>
                 <div className="btnDiv">
                 <Link to="/user" className="btn btn-2">
                   <span className="round"><i><ChevronLeftIcon/></i></span>
