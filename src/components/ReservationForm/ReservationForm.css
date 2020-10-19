@@ -19,6 +19,7 @@ select{
   height: 25px; 
   margin-right: 20px;
   margin-left: 7px;
+  margin-top: 7px;
 }
 .datePicker{
    font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
