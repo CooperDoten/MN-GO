@@ -7,7 +7,7 @@ import Carousel from 'react-material-ui-carousel';
 import './ParkDetails.css';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-
+import Card from '@material-ui/core/Card';
 
 class ParkDetails extends Component {
 
@@ -15,6 +15,7 @@ class ParkDetails extends Component {
   render() {
     return (
         <div className="centeredDiv">
+          <Card>
             <h1 className="padding20">{this.props.store.park.name}</h1>
             <Carousel className="individualStateParkDiv">
               {this.props.store.images.map((image, i) => 
@@ -35,7 +36,7 @@ class ParkDetails extends Component {
                   <span className="round-right"><i><ChevronRightIcon/></i></span>
                   </Link>
                 </div>
-
+                </Card>
         </div>
     );
   }
