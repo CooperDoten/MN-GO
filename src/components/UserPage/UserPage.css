@@ -5,4 +5,10 @@
     height: 100%;
     width: 90%;
     overflow: auto;
+   
+}
+body{
+    background-image: url('/images/northShore3.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }

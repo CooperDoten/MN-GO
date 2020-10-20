@@ -1,13 +1,32 @@
+
+.MuiPaper-root{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 90%;
+  height: 900px;
+  margin: 0 auto;
+  opacity: .93;
+  margin-top: 150px;
+  position: relative;
+  overflow-y: hidden;
+  overflow-y: scroll;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
 .centeredDiv{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+::-webkit-scrollbar {
+  display: none;
 }
 .parkCenteredDiv{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-right: 0;
     width: 30%;
     padding: 10px;
 

@@ -9,6 +9,12 @@
   margin: 0 0 30px;
   background-color: #3F805A;
   overflow: hidden;
+  width: 100%;
+  top: 0;
+  left: 0;
+  margin-bottom: 100px;
+  position: fixed;
+  z-index: 1000;
 }
 .nav-right{
   margin-top: 10px;
