@@ -1,0 +1,14 @@
+.MuiPaper-root.myTrips{
+ height: 30%;
+  
+}
+.myImagesDiv{
+    padding-top: 15%;
+    width: 100%;
+   text-align: center;
+   height: 400px
+}
+.myTripsPhoto{
+    width: 40%;
+    height: 60%;
+}
