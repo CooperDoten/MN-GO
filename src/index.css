@@ -3,6 +3,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: stretch;
   width: 90%;
   height: 900px;
   margin: 0 auto;
@@ -29,6 +30,7 @@
     justify-content: center;
     width: 30%;
     padding: 10px;
+    margin-bottom: 10px;
 
 }
 .CarouselItem{
@@ -45,27 +47,20 @@
     justify-content: center;
 }
 
-/* @media only screen and (max-width: 800px){
-    .link {
-        float: left;
-        color: #f2f2f2;
-        background-color: #3F805A;
-        text-align: center;
-        padding: 24px 10px;
-        text-decoration: none;
-        font-size: 10px;
-      
-        these last two make the logout button in
-        the nav bar look like another link 
-        border:none;
-        cursor: pointer;
-        outline:0;
-      }
-      .descriptionLink {
-          font-size: 10px;
-        }
+@media only screen and (max-width: 600px){
+  .parkCenteredDiv{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    padding: 10px;
+    height: 200px;
+}
+
+
    
-} */
+}
 /* .centeredScrollDiv{
     display: flex;
     flex-wrap: wrap;

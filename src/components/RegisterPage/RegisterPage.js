@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-
+import Card from '@material-ui/core/Card';
 // CUSTOM COMPONENTS
 import RegisterForm from '../RegisterForm/RegisterForm';
 
@@ -13,7 +13,7 @@ class RegisterPage extends Component {
 
   render() {
     return (
-      <div>
+      <Card className="loginPage">
         <RegisterForm />
 
         <center>
@@ -26,7 +26,7 @@ class RegisterPage extends Component {
           >
           </button>
         </center>
-      </div>
+      </Card>
     );
   }
 }
