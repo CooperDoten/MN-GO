@@ -5,6 +5,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import { TextField } from '@material-ui/core';
 import './TripData.css'
 import Card from '@material-ui/core/Card';
+import swal from 'sweetalert';
 // Basic class component structure for React with default state
 // value setup. When making a new component be sure to replace
 // the component name TemplateClass with the name for the new
@@ -42,14 +43,30 @@ class TemplateClass extends Component {
       comment: ''
   })
   }
-  deleteTrip = () => {
-      let objectToDelete = {
+  verifyDelete = () => {
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to undo",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((deleteTrip) => {
+      if (deleteTrip) {
+        swal("Your trip has been deleted", {
+          icon: "success",
+        });
+        let objectToDelete = {
           tripId: this.props.trip.id
       }
       this.props.dispatch({
           type: 'DELETE_TRIP',
           payload: objectToDelete
       })
+      } else {
+        swal("Your trip has not been deleted");
+      }
+    });
   }
 
   render() {
@@ -66,7 +83,7 @@ class TemplateClass extends Component {
         <button className="descriptionBtn"
             onClick={this.onAddComment}>Add Comment</button>
         <p>{this.props.trip.comments}</p>
-        <DeleteIcon  onClick={this.deleteTrip}/>
+        <DeleteIcon  onClick={this.verifyDelete}/>
       </Card>
       </div>
     );

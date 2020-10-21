@@ -148,27 +148,27 @@ createTrip = () => {
             <div className="formDiv" >
                 <h1>Make a Reservation</h1>
                 <div className="reservationFormDiv">
-                    <label htmlFor="firstName">First Name: </label>
-                        <input name="firstName" id="firstName" className='reservationFormInput'
-                            value={this.state.firstName} 
+                    <label htmlFor="firstName" id="firstName">First Name: </label>
+                        <input name="firstName" className='reservationFormInput'
+                            value={this.state.firstName} aria-labelledby="firstName"
                             onChange={(event) => this.handleChange(event, 'firstName')}/>
                     </div>
                     <div className="reservationFormDiv">
-                    <label>Last Name: </label>
-                        <input className='reservationFormInput'
-                            value={this.state.lastName} 
+                    <label htmlFor="lastName" id="lastName" >Last Name: </label>
+                        <input name="lastName" className='reservationFormInput'
+                            value={this.state.lastName} aria-labelledby="lastName"
                             onChange={(event) => this.handleChange(event, 'lastName')}/>
                     </div>
                     <div className="reservationFormDiv">
-                    <label>Email: </label>
-                        <input className="reservationFormInput"
-                            value={this.state.email} 
+                    <label  htmlFor="email" id="email" >Email: </label>
+                        <input name="email" className="reservationFormInput"
+                            value={this.state.email} aria-labelledby="email"
                             onChange={(event) => this.handleChange(event, 'email')}/>
                     </div>
                     <div className="reservationFormDiv">
-                    <label>Street Address: </label>
-                        <input className="reservationFormInput"
-                            value={this.state.streetAddress} 
+                    <label htmlFor="Address" id="address">Street Address: </label>
+                        <input name="Address" className="reservationFormInput"
+                            value={this.state.streetAddress} aria-labelledby="Address"
                             onChange={(event) => this.handleChange(event, 'streetAddress')}/>
                     </div>
                     <div className="reservationFormDiv">
@@ -178,9 +178,9 @@ createTrip = () => {
                             onChange={(event) => this.handleChange(event, 'city')}/>
                     </div>
                     <div className="reservationFormDiv">
-                    <label>State: </label>
+                    <label htmlFor="state" id="state">State: </label>
                         <select 
-                            value={this.state.state} 
+                            value={this.state.state} name="state"  aria-labelledby="state"
                             onChange={(event) => this.handleChange(event, 'state')}>
                             <option disabled value="selected"> -- select a state -- </option>
                                 {staticState.map((state, i) => {
@@ -189,14 +189,15 @@ createTrip = () => {
                         </select>
                     </div>
                     <div className="reservationFormDiv">
-                        <label>Zip Code: </label>
+                        <label htmlFor="zip code" id="zip code">Zip Code: </label>
                             <input className="reservationFormInput"
-                                value={this.state.zipCode} 
+                                value={this.state.zipCode} name="zip code"  aria-labelledby="zip code"
                                 onChange={(event) => this.handleChange(event, 'zipCode')}/>
                     </div>
                     <div className="reservationFormDiv">
-                    <label>Select a Campsite: </label>
-                        <select value={this.state.campSite} onChange={(event) => this.handleChange(event, 'campSite')}>
+                    <label htmlFor="camp site" id="camp site">Select a Campsite: </label>
+                        <select name="camp site"  aria-labelledby="camp site"
+                        value={this.state.campSite} onChange={(event) => this.handleChange(event, 'campSite')}>
                             <option disabled value="selected"> -- select a site -- </option>
                             <option>A</option>
                             <option>B</option>
@@ -217,16 +218,16 @@ createTrip = () => {
                         </select>
                     </div>
                     <div className="reservationFormDiv">
-                        <label>Start date:</label>
+                        <label htmlFor="trip-start" id="trip-start">Start date:</label>
                             <input type="date" id="start" name="trip-start" className="datePicker"
-                                value={this.state.startDate}
+                                value={this.state.startDate} aria-labelledby="trip-start"
                                 onChange={(event) => this.handleChange(event, 'startDate')}
                                 min="2020-10-01" max="2026-12-31" />
                     </div>
                     <div className="reservationFormDiv">
-                        <label>End date:</label>
+                        <label  htmlFor="trip-end" id="trip-end">End date:</label>
                             <input type="date" id="end" name="trip-end" className="datePicker"
-                                value={this.state.endDate} 
+                                value={this.state.endDate} aria-labelledby="trip-end"
                                 onChange={(event) => this.handleChange(event, 'endDate')}
                                 min="2020-10-01" max="2026-12-31"/>
                         </div>
