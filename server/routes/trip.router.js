@@ -16,9 +16,9 @@ console.log('our req.body is', req.body)
     .then( (result) => {
       console.log(result.rows[0].id);
       const userId = result.rows[0].id;
-      const userTripQuery = `INSERT INTO "user_trip" ("user_id", "state_park_id", "camp_site", "photo", "start_date", "end_date")
-      VALUES($1, $2, $3, $4, $5, $6);`;
-      pool.query(userTripQuery, [userId, req.body.stateParkId, req.body.campSite, req.body.photo, req.body.startDate, req.body.endDate])
+      const userTripQuery = `INSERT INTO "user_trip" ("user_id", "state_park_id", "state_park_name", "camp_site", "photo", "start_date", "end_date")
+      VALUES($1, $2, $3, $4, $5, $6, $7);`;
+      pool.query(userTripQuery, [userId, req.body.stateParkId, req.body.stateParkName, req.body.campSite, req.body.photo, req.body.startDate, req.body.endDate])
     .then(result => {
       res.sendStatus(201);
     }).catch(err => {

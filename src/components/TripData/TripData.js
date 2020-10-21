@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import DeleteIcon from '@material-ui/icons/Delete';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { TextField } from '@material-ui/core';
 import './TripData.css'
 import Card from '@material-ui/core/Card';
@@ -74,16 +76,28 @@ class TemplateClass extends Component {
     return (
       <div>
       <Card className="myTrips">
+        <h1>{this.props.trip.state_park_name}</h1>
         <div className="myImagesDiv">
           <img src={this.props.trip.photo} className="myTripsPhoto" alt="Minnesota State Park"/>
         </div>
-        <p >Campsite: {this.props.trip.camp_site}</p>
-        <TextField label="Comments" variant="outlined" 
-            value={this.state.comment} onChange={this.handleChange}/>
-        <button className="descriptionBtn"
-            onClick={this.onAddComment}>Add Comment</button>
-        <p>{this.props.trip.comments}</p>
-        <DeleteIcon  onClick={this.verifyDelete}/>
+        <div>
+          <p >Campsite: {this.props.trip.camp_site}</p>
+          <TextField label="Comments" 
+                    variant="outlined" 
+                    className="comments"
+                    multiline
+                    rows={4}
+                    value={this.state.comment} 
+                    onChange={this.handleChange}/>
+            <div className="btnDiv" onClick={this.onAddComment}>
+                        <Link to="/MyTrips" className="btn btn-2">
+                            <span className="txt-left">Comment</span>
+                            <span className="round-right"><i><ChevronRightIcon/></i></span>
+                        </Link>
+                    </div>
+          <p>{this.props.trip.comments}</p>
+          <DeleteIcon  onClick={this.verifyDelete}/>
+        </div>
       </Card>
       </div>
     );

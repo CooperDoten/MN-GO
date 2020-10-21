@@ -19,6 +19,7 @@ state = {
     zipCode: '',
     campSite: 'selected',
     stateParkId: '',
+    stateParkName: '',
     startDate: '',
     endDate: '',
     photo: '',
@@ -30,7 +31,8 @@ handleChange = (event, propertyName) => {
         [propertyName]: event.target.value,
         stateParkId: this.props.store.park.id,
         userId: this.props.store.user.id,
-        photo: this.props.store.park.photo
+        photo: this.props.store.park.photo,
+        stateParkName: this.props.store.park.name
     })
     
 }
@@ -112,8 +114,7 @@ onSubmit = () => {
           }) 
     }
     else{
-        // this.createTrip();
-        console.log(`shouldn't make it this far`)
+        this.createTrip();
     }
    
  
