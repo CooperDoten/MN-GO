@@ -23,19 +23,19 @@ import ParkDetails from '../ParkDetails/ParkDetails';
 import ReservationForm from '../ReservationForm/ReservationForm';
 import MyTrips from '../MyTrips/MyTrips';
 import './App.css';
-import { createMuiTheme} from '@material-ui/core';
+// import { createMuiTheme} from '@material-ui/core';
 
-//set some primary and secondary color themes
-const theme = createMuiTheme({
-    palette: {
-      primary: {
-        main: '#3F805A'
-      },
-      secondary: {
-          main: '#ffffff'
-      }
-    }
-});
+// //set some primary and secondary color themes
+// const theme = createMuiTheme({
+//     palette: {
+//       primary: {
+//         main: '#3F805A'
+//       },
+//       secondary: {
+//           main: '#ffffff'
+//       }
+//     }
+// });
 
 
 class App extends Component {

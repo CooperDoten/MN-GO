@@ -1,4 +1,8 @@
-
+body{
+  background-image: url('/images/northShore3.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .MuiPaper-root{
   display: flex;
   flex-wrap: wrap;

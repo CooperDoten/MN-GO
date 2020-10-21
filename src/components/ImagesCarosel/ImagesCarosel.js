@@ -15,7 +15,7 @@ class TemplateClass extends Component {
       console.log('we made it into our images prop', this.props.image);
     return (
       <div className="individualStateParkDiv">
-        <img className="individualStateParkImage" src={this.props.image.photo}/>
+        <img className="individualStateParkImage" src={this.props.image.photo} alt="Minnesota State Park"/>
       </div>
     );
   }

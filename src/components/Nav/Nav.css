@@ -7,7 +7,7 @@
 
 .nav {
   margin: 0 0 30px;
-  background-color: #3F805A;
+  background-color: #1b4332;
   width: 100%;
   top: 0;
   left: 0;
@@ -22,7 +22,7 @@
 .nav-link {
   float: left;
   color: #f2f2f2;
-  background-color: #3F805A;
+  background-color: #1b4332;
   text-align: center;
   padding: 24px 10px;
   text-decoration: none;
@@ -36,7 +36,7 @@
 }
 
 .nav-link:hover {
-  background-color: #3F805A;
+  background-color: #1b4332;
 }
 
 .nav-right {
@@ -75,7 +75,7 @@
   padding-top: 10px;
   height: 40%;
   width: 40px;
-  background-color: #3F805A;
+  background-color: #1b4332;
  
 }
 
@@ -83,7 +83,7 @@
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #3F805A;
+  background-color: #1b4332;
   min-width: 120px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 3000;

@@ -18,7 +18,7 @@ const Nav = (props) => {
 
   return (
     <div className="nav">
-        <img className="nav-title" src="/images/MN_GO_Logo.png"/>
+        <img className="nav-title" src="/images/MN_GO_Logo.png" alt="Minnesota GO logo"/>
       <div className="nav-right">
         <div className="dropdown">
           <MenuIcon id="dropDownBtn" className="dropBtn" style={{ color: "white" }} />
@@ -28,6 +28,12 @@ const Nav = (props) => {
               <>
                 <Link className="nav-link" to="/info">
                   Info Page
+                </Link>
+                <Link className="nav-link" to="/user">
+                  Home
+                </Link>
+                <Link className="nav-link" to="/MyTrips">
+                  My Trips
                 </Link>
                 <LogOutButton className="nav-link" />
               </>

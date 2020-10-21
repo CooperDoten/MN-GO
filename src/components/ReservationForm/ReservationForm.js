@@ -5,7 +5,8 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 import './ReservationForm.css';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import Card from '@material-ui/core/Card'
+import Card from '@material-ui/core/Card';
+import swal from 'sweetalert';
 class ReservationForm extends Component {
 state = {
     userId: '',
@@ -21,6 +22,7 @@ state = {
     startDate: '',
     endDate: '',
     photo: '',
+    inputClasses: 'reservationFormInput'
 }
 handleChange = (event, propertyName) => {
     this.setState({
@@ -30,28 +32,102 @@ handleChange = (event, propertyName) => {
         userId: this.props.store.user.id,
         photo: this.props.store.park.photo
     })
+    
 }
+
+
 onSubmit = () => {
     console.log('in on submit', this.state)
+    if(this.state.firstName === '' ) {
+        swal({
+            title: "Please add your first name",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          }) 
+          
+    }
+    else if(this.state.lastName === '') {
+        swal({
+            title: "Please add your last name to continue",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          }) 
+    }
+    else if(this.state.lastName === '') {
+        swal({
+            title: "Please add your last name to continue",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          }) 
+    }
+    else if(this.state.email === '') {
+        swal({
+            title: "Please add your email to continue",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          }) 
+    }
+    else if(this.state.streetAddress === '') {
+        swal({
+            title: "Please add your address to continue",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          }) 
+    }
+    else if(this.state.city === '') {
+        swal({
+            title: "Please add your City to continue",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          }) 
+    }
+    else if(this.state.zipCode === '') {
+        swal({
+            title: "Please add your City to continue",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          }) 
+    }
+    else if(this.state.campSite === 'selected') {
+        swal({
+            title: "Please add your City to continue",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          }) 
+    }
+    else if(this.state.startDate > this.state.endDate ) {
+        swal({
+            title: "Please make sure trip dates are correct",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          }) 
+    }
+    else{
+        // this.createTrip();
+        console.log(`shouldn't make it this far`)
+    }
+   
+ 
+}
+createTrip = () => {
     this.props.dispatch({
         type: 'CREATE_TRIP',
         payload: this.state
     })
-    this.setState({
-        userId: '',
-        firstName: '',
-        lastName: '',
-        email: '',
-        streetAddress: '',
-        city: '',
-        state: '',
-        zipCode: '',
-        campSite: 'selected',
-        stateParkId: '',
-        startDate: '',
-        endDate: '',
-        photo: '',
-    })
+    swal({
+        title: "Trip Created!",
+        icon: "success",
+      });
+      this.props.history.push('/MyTrips')
 }
   render() {
     const staticState = [
@@ -65,20 +141,21 @@ onSubmit = () => {
         'OK', 'OR', 'PA', 'RI', 'SC',
         'SD', 'TN', 'TX', 'UT', 'VT',
         'VA', 'WA', 'WV', 'WI', 'WY',
-    ];    
+    ];
+
     return (
         <Card>
-            <div className="formDiv">
+            <div className="formDiv" >
                 <h1>Make a Reservation</h1>
                 <div className="reservationFormDiv">
-                    <label>First Name: </label>
-                        <input className="reservationFormInput"
+                    <label htmlFor="firstName">First Name: </label>
+                        <input name="firstName" id="firstName" className='reservationFormInput'
                             value={this.state.firstName} 
                             onChange={(event) => this.handleChange(event, 'firstName')}/>
                     </div>
                     <div className="reservationFormDiv">
                     <label>Last Name: </label>
-                        <input className="reservationFormInput"
+                        <input className='reservationFormInput'
                             value={this.state.lastName} 
                             onChange={(event) => this.handleChange(event, 'lastName')}/>
                     </div>
@@ -160,7 +237,7 @@ onSubmit = () => {
                             </Link>
                         </div>
                     <div className="btnDiv" onClick={this.onSubmit}>
-                        <Link to="/MyTrips" className="btn btn-2">
+                        <Link to="/reservationForm" className="btn btn-2">
                             <span className="txt-left">BOOK</span>
                             <span className="round-right"><i><ChevronRightIcon/></i></span>
                         </Link>

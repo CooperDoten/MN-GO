@@ -58,7 +58,7 @@ class TemplateClass extends Component {
       <div>
       <Card className="myTrips">
         <div className="myImagesDiv">
-          <img src={this.props.trip.photo} className="myTripsPhoto"/>
+          <img src={this.props.trip.photo} className="myTripsPhoto" alt="Minnesota State Park"/>
         </div>
         <p >Campsite: {this.props.trip.camp_site}</p>
         <TextField label="Comments" variant="outlined" 
