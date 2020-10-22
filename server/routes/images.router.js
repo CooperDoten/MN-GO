@@ -1,9 +1,11 @@
 const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
+const {rejectUnauthenticated} = require('../modules/authentication-middleware');
 
-router.post('/', (req, res) => {
-    //joining our many state park photos to our banner photo
+router.post('/', rejectUnauthenticated, (req, res) => {
+    //joining our many state park photos to our specific state park 
+    //send data back to use in images Carosel component
    console.log(`in our images router.post`, req.body.id);
   let queryText = 
   `SELECT "state_park_images"."photo" FROM "state_park_images"
