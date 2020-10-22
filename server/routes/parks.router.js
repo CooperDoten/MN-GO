@@ -1,8 +1,8 @@
 const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
-
-router.get('/', (req, res) => {
+const {rejectUnauthenticated} = require('../modules/authentication-middleware');
+router.get('/', rejectUnauthenticated, (req, res) => {
     //get all our state parks
    console.log(`in our parks router.get`);
   queryText = `SELECT * FROM "state_park" ORDER BY "id" ASC;`;

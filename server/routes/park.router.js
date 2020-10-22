@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool');
-const {
-    rejectUnauthenticated,
-  } = require('../modules/authentication-middleware');
+const {rejectUnauthenticated} = require('../modules/authentication-middleware');
 //route set up to take data sent and 
 //perform a query to the DB to return a specific park
 router.post('/', rejectUnauthenticated, (req, res) => {

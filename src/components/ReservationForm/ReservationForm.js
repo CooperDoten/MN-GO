@@ -104,7 +104,7 @@ onSubmit = () => {
     }
     else if(this.state.campSite === 'selected') {
         swal({
-            title: "Please add your City to continue",
+            title: "Please add a campsite to continue",
             icon: "warning",
             buttons: true,
             dangerMode: true,
