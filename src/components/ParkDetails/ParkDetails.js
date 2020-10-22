@@ -15,7 +15,7 @@ class ParkDetails extends Component {
   render() {
     return (
         <div className="centeredDiv">
-          <Card>
+          <Card className="parkDetailsCard">
             <h1 className="padding20">{this.props.store.park.name}</h1>
             <Carousel className="individualStateParkDiv">
               {this.props.store.images.map((image, i) => 
@@ -23,7 +23,8 @@ class ParkDetails extends Component {
                 key={i} image= {image}/>
                 )}
               </Carousel>
-            <p >{this.props.store.park.description}</p>
+            <p className="descripPara">{this.props.store.park.description}</p>
+              <p className="descripPara">Highlights include: {this.props.store.park.activities}</p>
               <div className="btnDiv">
                 <Link to="/user" className="btn btn-2">
                   <span className="round"><i><ChevronLeftIcon/></i></span>

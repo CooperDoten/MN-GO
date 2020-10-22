@@ -51,7 +51,7 @@ body{
     justify-content: center;
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 760px){
   .parkCenteredDiv{
     display: flex;
     flex-wrap: wrap;
@@ -61,19 +61,17 @@ body{
     padding: 10px;
     height: 200px;
 }
-
+body{
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: cover;
+  background-position: absolute;
+}
 
    
 }
-/* .centeredScrollDiv{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 90%;
-    height: 400px;
-    overflow-x: hidden;
-    overflow-y: auto;
-} */
+
 .max-width70{
     max-width: 70%; 
 }
@@ -88,61 +86,7 @@ h1{
     text-align: center;
 }
 
-/* .link {
-  float: left;
-  color: #f2f2f2;
-  background-color: #3F805A;
-  text-align: center;
-  padding: 24px 10px;
-  text-decoration: none;
-  font-size: 15px;
 
-  border:none;
-  cursor: pointer;
-  outline:0;
-} */
-/* .descriptionLink {
-    float: left;
-    color: #f2f2f2;
-    background-color: #3F805A;
-    text-align: center;
-    text-decoration: none;
-    font-size: 15px;
-    height:100%;
-    width: 100%;
-    border:none;
-    cursor: pointer;
-    outline:0;
-  }
-.descriptionBtn {
-   
-    border-color: #3F805A;
-    border-width: 1px 1px 3px;
-    border-radius: 4px;
-    background-color: #3F805A;
-    color: #f8f8f8;
-    font-size: 1.1rem;
-    outline: 0;
-    cursor: pointer;
-    height: 40px;
-    margin: 20px;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-  } */
-  /* .userBtn {
-    display: inline-block;
-    border-color: #3F805A;
-    border-width: 1px 1px 3px;
-    border-radius: 4px;
-    background-color: #3F805A;
-    color: #f8f8f8;
-    font-size: 1.1rem;
-    outline: 0;
-    cursor: pointer;
-    height: 40px;
-    padding: 10px;
-  } */
   .widthDiv{
       width: 100%;
       text-align: center;

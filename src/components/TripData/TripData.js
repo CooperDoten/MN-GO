@@ -80,8 +80,11 @@ class TemplateClass extends Component {
         <div className="myImagesDiv">
           <img src={this.props.trip.photo} className="myTripsPhoto" alt="Minnesota State Park"/>
         </div>
-        <div>
-          <p >Campsite: {this.props.trip.camp_site}</p>
+        <div className="myTripsDetails"> 
+          <div className="myTripsData">
+            <div className="campsitePara">
+              <p >Campsite: {this.props.trip.camp_site}</p>
+          </div>
           <TextField label="Comments" 
                     variant="outlined" 
                     className="comments"
@@ -89,14 +92,18 @@ class TemplateClass extends Component {
                     rows={4}
                     value={this.state.comment} 
                     onChange={this.handleChange}/>
-            <div className="btnDiv" onClick={this.onAddComment}>
+            <div className="btnDiv" onClick={this.onAddComment} id="commentBtn">
                         <Link to="/MyTrips" className="btn btn-2">
                             <span className="txt-left">Comment</span>
                             <span className="round-right"><i><ChevronRightIcon/></i></span>
                         </Link>
+                        </div>
+                        <p>{this.props.trip.comments}</p>
                     </div>
-          <p>{this.props.trip.comments}</p>
-          <DeleteIcon  onClick={this.verifyDelete}/>
+          <div className="deleteIconDiv">
+        <DeleteIcon  className="deleteIcon" onClick={this.verifyDelete}/>
+      </div> 
+    
         </div>
       </Card>
       </div>
