@@ -10,10 +10,10 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import Card from '@material-ui/core/Card';
 
 class ParkDetails extends Component {
+  //scroll to top on page load
 componentDidMount() {
   window.scrollTo(0, 0);
 }
-
   render() {
     return (
         <div className="centeredDiv">
@@ -26,20 +26,20 @@ componentDidMount() {
                 )}
               </Carousel>
             <p className="descripPara">{this.props.store.park.description}</p>
-              <p className="descripPara">Highlights include: {this.props.store.park.activities}</p>
+            <p className="descripPara">Highlights include: {this.props.store.park.activities}</p>
               <div className="btnDiv">
                 <Link to="/user" className="btn btn-2">
                   <span className="round"><i><ChevronLeftIcon/></i></span>
                   <span className="txt-left">BACK</span>
-                  </Link>
-                </div>
-                <div className="btnDiv">
+                </Link>
+              </div>
+              <div className="btnDiv">
                 <Link to="/ReservationForm" className="btn btn-2">
                   <span className="txt-left">GO</span>
                   <span className="round-right"><i><ChevronRightIcon/></i></span>
-                  </Link>
-                </div>
-                </Card>
+                </Link>
+              </div>
+          </Card>
         </div>
     );
   }

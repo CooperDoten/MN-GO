@@ -41,7 +41,6 @@ class App extends Component {
     this.props.dispatch({ type: 'FETCH_USER' });
     
   }
-
   render() {
     return (
       <Router>

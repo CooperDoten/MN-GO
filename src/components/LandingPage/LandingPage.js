@@ -10,10 +10,11 @@ class LandingPage extends Component {
   state = {
     heading: 'Class Component',
   };
+  //scroll to top on page load
   componentDidMount() {
     window.scrollTo(0, 0)
   }
-
+  //on click push to login page
   onLogin = (event) => {
     this.props.history.push('/login');
   };
@@ -22,7 +23,6 @@ class LandingPage extends Component {
     return (
       <div className="container">
         <h2>{this.state.heading}</h2>
-
         <div className="grid">
           <div className="grid-col grid-col_6">
             <Card className="landingPageCard">
@@ -38,7 +38,6 @@ class LandingPage extends Component {
           </div>
           <div className="grid-col grid-col_6" id="registerFormPage">
             <RegisterForm />
-
             <center className="alreadyAMember">
               <span>Already a Member? </span>
               <button className="btn btn_asLink" onClick={this.onLogin}>

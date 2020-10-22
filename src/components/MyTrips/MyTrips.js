@@ -12,6 +12,7 @@ class MyTrips extends Component {
   state = {
     heading: 'MyTrips',
   };
+  //Fetch user trips to send to Trip Data component
   componentDidMount() {
       this.props.dispatch({
           type: 'FETCH_USER_TRIPS'

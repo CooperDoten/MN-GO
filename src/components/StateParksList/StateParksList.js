@@ -11,6 +11,7 @@ class StateParksList extends Component {
     heading: 'Class Component',
     park: {}
   };
+  //scroll to top of window on page load
   componentDidMount() {
     window.scrollTo(0, 0);
   }
@@ -22,10 +23,12 @@ class StateParksList extends Component {
       this.setState({
           park: this.park
       })
+      //on click get park to redux state to load in Park Details component
       this.props.dispatch({
           type: 'FETCH_PARK',
           payload: park
       });
+      //Fetch all images from park_images table to display carousel on park Details component
       this.props.dispatch({
         type: 'FETCH_IMAGES',
         payload: park
@@ -39,13 +42,12 @@ class StateParksList extends Component {
         <div className="parkCenteredDiv">
           <h3>{this.props.park.name}</h3>
           <img className="park-photo" src={this.props.park.photo} alt="Minnesota State Park"/>
-          {/* <button className="userBtn" ><Link className="descriptionLink" to="/ParkDetails">Explore</Link></button> */}
           <div className="btnDiv" onClick={() => this.parkDetails(this.props.park)}>
-                <Link to="/ParkDetails" className="btn btn-2"> 
-                  <span className="txt-left">GO</span>
-                  <span className="round-right"><i><ChevronRightIcon/></i></span>
-                  </Link>
-                </div>
+            <Link to="/ParkDetails" className="btn btn-2"> 
+                <span className="txt-left">GO</span>
+                <span className="round-right"><i><ChevronRightIcon/></i></span>
+            </Link>
+          </div>
         </div>
     );
   }

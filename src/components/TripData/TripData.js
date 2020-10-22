@@ -8,25 +8,25 @@ import { TextField } from '@material-ui/core';
 import './TripData.css'
 import Card from '@material-ui/core/Card';
 import swal from 'sweetalert';
-// Basic class component structure for React with default state
-// value setup. When making a new component be sure to replace
-// the component name TemplateClass with the name for the new
-// component.
+
 class TemplateClass extends Component {
   state = {
     comment: '',
   };
+  //Fetch this users trips
   componentDidMount() {
     this.props.dispatch({
         type: 'FETCH_USER_TRIPS'
     })
 }
+//change comment 
   handleChange = (event) => {
     this.setState({
         ...this.state,
         comment: event.target.value
     })
   }
+  //send comment to users trip
   onAddComment = () => {
       
       let objectToSend = {
@@ -37,14 +37,17 @@ class TemplateClass extends Component {
           type: 'UPDATE_COMMENT',
           payload: objectToSend
       })
+      //refresh comment on DOM
       this.props.dispatch({
         type: 'FETCH_USER_TRIPS'
     })
+    //clear out input
     this.setState({
       ...this.state,
       comment: ''
-  })
+    })
   }
+  //verify user Delete of trip
   verifyDelete = () => {
     swal({
       title: "Are you sure?",
@@ -75,39 +78,38 @@ class TemplateClass extends Component {
       console.log('here is our trips id', this.props.trip.id)
     return (
       <div>
-      <Card className="myTrips">
-        <h1>{this.props.trip.state_park_name}</h1>
-        <div className="myImagesDiv">
-          <img src={this.props.trip.photo} className="myTripsPhoto" alt="Minnesota State Park"/>
-        </div>
-        <div className="myTripsDetails"> 
-          <div className="myTripsData">
-            <div className="campsitePara">
-              <p >Campsite: {this.props.trip.camp_site}</p>
+        <Card className="myTrips">
+          <h1>{this.props.trip.state_park_name}</h1>
+          <div className="myImagesDiv">
+            <img src={this.props.trip.photo} className="myTripsPhoto" alt="Minnesota State Park"/>
           </div>
-          <TextField label="Comments" 
-                    variant="outlined" 
-                    className="comments"
-                    multiline
-                    rows={4}
-                    value={this.state.comment} 
-                    onChange={this.handleChange}/>
-            <div className="btnDiv" onClick={this.onAddComment} id="commentBtn">
-                        <Link to="/MyTrips" className="btn btn-2">
-                            <span className="txt-left">Comment</span>
-                            <span className="round-right"><i><ChevronRightIcon/></i></span>
-                        </Link>
-                        </div>
-                        <div className="commentsDiv">
-                        <p>{this.props.trip.comments}</p>
-                        </div>
-                    </div>
-          <div className="deleteIconDiv">
-        <DeleteIcon  className="deleteIcon" onClick={this.verifyDelete}/>
-      </div> 
-    
-        </div>
-      </Card>
+          <div className="myTripsDetails"> 
+            <div className="myTripsData">
+              <div className="campsitePara">
+                <p >Campsite: {this.props.trip.camp_site}</p>
+            </div>
+            <TextField label="Comments" 
+                      variant="outlined" 
+                      className="comments"
+                      multiline
+                      rows={4}
+                      value={this.state.comment} 
+                      onChange={this.handleChange}/>
+              <div className="btnDiv" onClick={this.onAddComment} id="commentBtn">
+                <Link to="/MyTrips" className="btn btn-2">
+                    <span className="txt-left">Comment</span>
+                    <span className="round-right"><i><ChevronRightIcon/></i></span>
+                </Link>
+              </div>
+              <div className="commentsDiv">
+                <p>{this.props.trip.comments}</p>
+              </div>
+            </div>
+            <div className="deleteIconDiv">
+              <DeleteIcon  className="deleteIcon" onClick={this.verifyDelete}/>
+            </div> 
+          </div>
+        </Card>
       </div>
     );
   }

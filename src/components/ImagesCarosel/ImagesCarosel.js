@@ -6,11 +6,11 @@ import './ImagesCarosel.css';
 // value setup. When making a new component be sure to replace
 // the component name TemplateClass with the name for the new
 // component.
-class TemplateClass extends Component {
+class ImagesCarosel extends Component {
   state = {
     heading: 'Class Component',
   };
-
+  //image carosel to add specific images to state park in park details
   render() {
       console.log('we made it into our images prop', this.props.image);
     return (
@@ -21,4 +21,4 @@ class TemplateClass extends Component {
   }
 }
 
-export default connect(mapStoreToProps)(TemplateClass);
+export default connect(mapStoreToProps)(ImagesCarosel);

@@ -8,6 +8,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import Card from '@material-ui/core/Card';
 import swal from 'sweetalert';
 class ReservationForm extends Component {
+//local state to capture user input and send to DB
 state = {
     userId: '',
     firstName: '',
@@ -25,9 +26,11 @@ state = {
     photo: '',
     inputClasses: 'reservationFormInput'
 }
+//scroll to top of page on load
 componentDidMount() {
     window.scrollTo(0, 0);
-  }
+}
+//grab user input and bind to state
 handleChange = (event, propertyName) => {
     this.setState({
         ...this.state,
@@ -39,8 +42,7 @@ handleChange = (event, propertyName) => {
     })
     
 }
-
-
+//on submit verify theres data to send
 onSubmit = () => {
     console.log('in on submit', this.state)
     if(this.state.firstName === '' ) {
@@ -119,9 +121,8 @@ onSubmit = () => {
     else{
         this.createTrip();
     }
-   
- 
 }
+//called if fields are filled out and CREATE new trip in user_trips table
 createTrip = () => {
     this.props.dispatch({
         type: 'CREATE_TRIP',
@@ -134,6 +135,7 @@ createTrip = () => {
       this.props.history.push('/MyTrips')
 }
   render() {
+      //list of states for dropdown menu
     const staticState = [
         'AL', 'AK', 'AZ', 'AR', 'CA', 
         'CO', 'CT', 'DE', 'FL', 'GA',
@@ -158,22 +160,22 @@ createTrip = () => {
                             onChange={(event) => this.handleChange(event, 'firstName')}/>
                     </div>
                     <div className="reservationFormDiv">
-                    <label htmlFor="lastName" id="lastName" >Last Name: </label>
-                        <input name="lastName" className='reservationFormInput'
-                            value={this.state.lastName} aria-labelledby="lastName"
-                            onChange={(event) => this.handleChange(event, 'lastName')}/>
+                        <label htmlFor="lastName" id="lastName" >Last Name: </label>
+                            <input name="lastName" className='reservationFormInput'
+                                value={this.state.lastName} aria-labelledby="lastName"
+                                onChange={(event) => this.handleChange(event, 'lastName')}/>
                     </div>
                     <div className="reservationFormDiv">
-                    <label  htmlFor="email" id="email" >Email: </label>
-                        <input name="email" className="reservationFormInput"
-                            value={this.state.email} aria-labelledby="email"
-                            onChange={(event) => this.handleChange(event, 'email')}/>
+                        <label  htmlFor="email" id="email" >Email: </label>
+                            <input name="email" className="reservationFormInput"
+                                value={this.state.email} aria-labelledby="email"
+                                onChange={(event) => this.handleChange(event, 'email')}/>
                     </div>
                     <div className="reservationFormDiv">
-                    <label htmlFor="Address" id="address">Street Address: </label>
-                        <input name="Address" className="reservationFormInput"
-                            value={this.state.streetAddress} aria-labelledby="Address"
-                            onChange={(event) => this.handleChange(event, 'streetAddress')}/>
+                        <label htmlFor="Address" id="address">Street Address: </label>
+                            <input name="Address" className="reservationFormInput"
+                                value={this.state.streetAddress} aria-labelledby="Address"
+                                onChange={(event) => this.handleChange(event, 'streetAddress')}/>
                     </div>
                     <div className="reservationFormDiv">
                     <label>City: </label>
@@ -182,15 +184,15 @@ createTrip = () => {
                             onChange={(event) => this.handleChange(event, 'city')}/>
                     </div>
                     <div className="reservationFormDiv">
-                    <label htmlFor="state" id="state">State: </label>
-                        <select 
-                            value={this.state.state} name="state"  aria-labelledby="state"
-                            onChange={(event) => this.handleChange(event, 'state')}>
-                            <option disabled value="selected"> -- select a state -- </option>
-                                {staticState.map((state, i) => {
-                                return <option key={i} value={state}>{state}</option>
-                                })}
-                        </select>
+                        <label htmlFor="state" id="state">State: </label>
+                            <select 
+                                value={this.state.state} name="state"  aria-labelledby="state"
+                                onChange={(event) => this.handleChange(event, 'state')}>
+                                <option disabled value="selected"> -- select a state -- </option>
+                                    {staticState.map((state, i) => {
+                                    return <option key={i} value={state}>{state}</option>
+                                    })}
+                            </select>
                     </div>
                     <div className="reservationFormDiv">
                         <label htmlFor="zip code" id="zip code">Zip Code: </label>
@@ -199,27 +201,27 @@ createTrip = () => {
                                 onChange={(event) => this.handleChange(event, 'zipCode')}/>
                     </div>
                     <div className="reservationFormDiv">
-                    <label htmlFor="camp site" id="camp site">Select a Campsite: </label>
-                        <select name="camp site"  aria-labelledby="camp site"
-                        value={this.state.campSite} onChange={(event) => this.handleChange(event, 'campSite')}>
-                            <option disabled value="selected"> -- select a site -- </option>
-                            <option>A</option>
-                            <option>B</option>
-                            <option>C</option>
-                            <option>D</option>
-                            <option>E</option>
-                            <option>F</option>
-                            <option>G</option>
-                            <option>H</option>
-                            <option>I</option>
-                            <option>J</option>
-                            <option>K</option>
-                            <option>L</option>
-                            <option>M</option>
-                            <option>N</option>
-                            <option>O</option>
-                            <option>P</option>
-                        </select>
+                        <label htmlFor="camp site" id="camp site">Select a Campsite: </label>
+                            <select name="camp site"  aria-labelledby="camp site"
+                            value={this.state.campSite} onChange={(event) => this.handleChange(event, 'campSite')}>
+                                <option disabled value="selected"> -- select a site -- </option>
+                                <option>A</option>
+                                <option>B</option>
+                                <option>C</option>
+                                <option>D</option>
+                                <option>E</option>
+                                <option>F</option>
+                                <option>G</option>
+                                <option>H</option>
+                                <option>I</option>
+                                <option>J</option>
+                                <option>K</option>
+                                <option>L</option>
+                                <option>M</option>
+                                <option>N</option>
+                                <option>O</option>
+                                <option>P</option>
+                            </select>
                     </div>
                     <div className="reservationFormDiv">
                         <label htmlFor="trip-start" id="trip-start">Start date:</label>
