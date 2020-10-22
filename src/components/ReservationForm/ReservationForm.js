@@ -25,6 +25,9 @@ state = {
     photo: '',
     inputClasses: 'reservationFormInput'
 }
+componentDidMount() {
+    window.scrollTo(0, 0);
+  }
 handleChange = (event, propertyName) => {
     this.setState({
         ...this.state,

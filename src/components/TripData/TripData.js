@@ -98,7 +98,9 @@ class TemplateClass extends Component {
                             <span className="round-right"><i><ChevronRightIcon/></i></span>
                         </Link>
                         </div>
+                        <div className="commentsDiv">
                         <p>{this.props.trip.comments}</p>
+                        </div>
                     </div>
           <div className="deleteIconDiv">
         <DeleteIcon  className="deleteIcon" onClick={this.verifyDelete}/>

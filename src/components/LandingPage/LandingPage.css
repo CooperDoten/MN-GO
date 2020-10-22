@@ -1,3 +1,22 @@
+.MuiPaper-root.landingPageCard{
+  height: 600px;
+}
+#registerFormPage{
+  padding: 50px;
+}
+.boundaryWatersImage{
+  width: 60%;
+  height: 40%;
+}
+.landingPagePara{
+  font-size: 20px;
+  padding-top: 40px;
+  max-width: 70%;
+}
+.alreadyAMember{
+  padding-right: 55px;
+}
+
 /* --------------------------------------------------------------------------------
 Grid
 -------------------------------------------------------------------------------- */

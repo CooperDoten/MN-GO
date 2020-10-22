@@ -1,7 +1,8 @@
 .MuiPaper-root.loginPage{
     width: 60%;
+   height: 650px;
 }
 .newToMNGO{
     position: absolute;
-    bottom: 350px;
+    bottom: 150px;
 }

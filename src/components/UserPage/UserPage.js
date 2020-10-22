@@ -9,7 +9,8 @@ class UserPage extends Component {
     console.log(`in component did mount`)
     this.props.dispatch({
       type: 'FETCH_PARKS'
-    })
+    });
+    window.scrollTo(0, 0);
   }
   // this component doesn't do much to start, just renders some user info to the DOM
   render() {

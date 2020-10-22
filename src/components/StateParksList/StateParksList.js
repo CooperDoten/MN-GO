@@ -11,6 +11,9 @@ class StateParksList extends Component {
     heading: 'Class Component',
     park: {}
   };
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   parkDetails = (park) => {
     // moreDetails takes what was clicked and binds it to a 
     //movie object dispatches to saga to grab that specific movie 

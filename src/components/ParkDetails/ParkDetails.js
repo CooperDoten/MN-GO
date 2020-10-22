@@ -10,7 +10,9 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import Card from '@material-ui/core/Card';
 
 class ParkDetails extends Component {
-
+componentDidMount() {
+  window.scrollTo(0, 0);
+}
 
   render() {
     return (
