@@ -15,8 +15,11 @@ I am incredibly passionate about Minnesota and all of the beauty that the landsc
 
 
 ![Screenshot](public/images/registrationPage.png?raw=true)
-
-
+![Screenshot](public/images/loginPage.png?raw=true)
+![Screenshot](public/images/homepage.png?raw=true)
+![Screenshot](public/images/detailsPage.png?raw=true)
+![Screenshot](public/images/reservationForm.png?raw=true)
+![Screenshot](public/images/myTripsPage.png?raw=true)
 ## Prerequisites
 
 Before you get started, make sure you have the following software installed on your computer:
