@@ -26,14 +26,14 @@ class LandingPage extends Component {
         <div className="grid">
           <div className="grid-col grid-col_6">
             <Card className="landingPageCard">
-            <p className="landingPagePara">
-              From 10,000 lakes to the rolling bluffs. From
-              the sight of first snow, to a long summer's day spent at the lake,
-              there's something for everyone. Come and stay for a while and see why Minnesota
-              is America's best kept secret.
-            </p>
-            <img src='/images/boundaryWatersImage.png' alt='Boundary Waters canoer'
-                  className="boundaryWatersImage"/>
+              <p className="landingPagePara">
+                From 10,000 lakes to the rolling bluffs. From
+                the sight of first snow, to a long summer's day spent at the lake,
+                there's something for everyone. Come and stay for a while and see why Minnesota
+                is America's best kept secret.
+              </p>
+              <img src='/images/boundaryWatersImage.png' alt='Boundary Waters canoer'
+                    className="boundaryWatersImage"/>
             </Card>
           </div>
           <div className="grid-col grid-col_6" id="registerFormPage">
