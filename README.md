@@ -14,7 +14,7 @@ I am incredibly passionate about Minnesota and all of the beauty that the landsc
 ## Screen Shot
 
 
-![Screenshot](/images/registrationPage.png?raw=true)
+![Screenshot](public/images/registrationPage.png?raw=true)
 
 
 ## Prerequisites
