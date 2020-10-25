@@ -38,14 +38,13 @@ Before you get started, make sure you have the following software installed on y
 5. Run `npm run client` in your terminal, this command will open up a new browser tab for you!
 
 ## Usage
-How does someone use this application? Tell a user story here.
 
-1. xxx
-2. xxx
-3. xxx
-4. xxx
-5. xxx
-6. xxx
+1. Register by creating a username and password
+2. Login
+3. Click 'GO' to explore more details about any State Park
+4. Click 'Back' to navigate back to Home page or 'GO' to book a trip
+5. Enter in information on reservation form
+6. Add comments to trips booked or delete a trip
 
 
 ## Built With
