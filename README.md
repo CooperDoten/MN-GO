@@ -1,8 +1,5 @@
 # MN GO
 
-This project is currently under construction!
-
-![](https://media1.giphy.com/media/26ybvJNaZZKpPONEc/giphy.gif)
 
 ## Description
 
